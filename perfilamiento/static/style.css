@@ -1,0 +1,13 @@
+ h1{
+     color: aqua;
+     text-align: center;
+ }
+
+body{
+    display: flex;
+    width: 60%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+}

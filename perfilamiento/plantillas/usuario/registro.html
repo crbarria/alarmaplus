@@ -1,0 +1,34 @@
+{% extends 'base/index.html'%}
+{% block main %}
+    {% if formulario.erros %}
+
+        {{ formulario.erros }}
+    {% endif %}
+
+    <form action="" method="post" autocomplete="off">
+
+        {% csrf_token %}
+        <article class="card-body">
+            {% for campo in formulario %}
+            <div class="form-group">
+                <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                {{ campo }}
+            </div>
+                {% if campo.errors %}
+                    {% for error in campo.errors %}
+                        <small id="emailHelp" class="form-text text-muted">{{ error }}</small>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            {{ formulario2 }}
+        </article>
+        <article class="card-footer">
+            <input type="submit" class="btn btn-outline-success" value="Crear registro">
+        </article>
+
+    
+
+    </form>
+
+    
+{% endblock main %}
