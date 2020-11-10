@@ -5,7 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import Genero, PerfilUser
 from django.contrib.auth.models import User
-# Create your views here.
+
+
 def registro(request):
     formulario = FormCreacionUsuario()
     formulario2 = FormCreacionPerfil()
@@ -34,8 +35,8 @@ def registro(request):
 
 def iniciar(request):
     formulario = FormIniciarSesion()
-    if request.method== 'POST':
-        formulario = FormIniciarSesion(data= request.POST)
+    if request.method == 'POST':
+        formulario = FormIniciarSesion(data=request.POST)
         if formulario.is_valid():
             username = formulario.cleaned_data['username']
             password = formulario.cleaned_data['password']
@@ -45,7 +46,7 @@ def iniciar(request):
                 messages.SUCCESS,
                 'Bienvenido!{}'.format(usuarioEncontrado.get_username()))
                 login(request,usuarioEncontrado)
-                return redirect('/menu/')
+                return redirect('menu')
         
     context = {
         'formulario':formulario

@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'perfil',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'Jacm1435.',
         'HOST': 'localhost',
         'PORT': 3306 
     }
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-cl'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/santiago'
 
 USE_I18N = True
 

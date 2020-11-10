@@ -5,42 +5,27 @@ from .models import PerfilUser
 
 
 def agregarClaseFormControl(elementos):
-     for campo in elementos:
-         campo.field.widget.attrs['class'] = 'form-control'
+    for campo in elementos:
+        campo.field.widget.attrs['class'] = 'form-control'
 
 
 
 class FormCreacionUsuario(UserCreationForm):
-    # genero = forms.Select()
 
     def __init__(self, *args,**kwargs):
-        super(FormCreacionUsuario,self).__init__(*args,**kwargs)
-        for campo in self.visible_fields():
-            campo.field.widget.attrs['class'] = 'form-control'
-
-
+        super(FormCreacionUsuario, self).__init__(*args, **kwargs)
+        agregarClaseFormControl(self.visible_fields())
     class Meta:
         model =User
-        fields = {
+        fields = (
             'username',
             'first_name',
             'last_name',
             'email',
             'password1',
             'password2'
-           
-        }
+        )
 
-    
-    #GUARDAR INFORAMCION 1 A 1 DE UNA MANERA MAS CORTA
-    #     
-    # def save(self, commit=True):
-    #     if not commit:
-    #         raise NotImplementedError('El usuario no se guardo en la BD')
-    #     usuarioNuevo = super(FormCreacionPerfil,self).save(commit=True)
-    #     perfilUser = PerfilUser(usuario=usuarioNuevo, genero=self.cleaned_data['genero'])
-    #     perfilUser.save()
-    #     return usuarioNuevo, perfilUser
 
 class FormCreacionPerfil(forms.ModelForm):
 

@@ -7,6 +7,5 @@ urlpatterns = [
     path('',iniciar,name="iniciar"),
     path('menu/', menu, name='menu'),
     path('salir/', salir, name='salir'),
-    path('verperfil/', verperfil, name='verperfil'),
-   
+    path('verperfil/', verperfil, name='verperfil'),   
 ]
