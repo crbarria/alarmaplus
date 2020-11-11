@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'perfilamiento.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,7 +92,15 @@ DATABASES = {
     }
    
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'ubicacion',
+
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

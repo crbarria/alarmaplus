@@ -7,3 +7,9 @@ def envio(request):
         request,
         'usuario/alerta.html'
     )
+
+def activarAlerta(request):
+    return render(
+        request,
+        'usuario/activarAlerta.html'
+    )

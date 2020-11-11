@@ -1,14 +1,16 @@
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand mt-5" href="#">
-      <img src="https://images.vexels.com/media/users/3/153509/isolated/preview/1f5a8a75b7f57d53f790a151d325dba3-alarma-de-color-claro-icono-de-trazo-by-vexels.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-      AlarmaPLus
-    </a>
-  </nav>
+  <a class="navbar-brand mt-5" href="#">
+    <img
+      src="https://images.vexels.com/media/users/3/153509/isolated/preview/1f5a8a75b7f57d53f790a151d325dba3-alarma-de-color-claro-icono-de-trazo-by-vexels.png"
+      width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    AlarmaPLus
+  </a>
+</nav>
 
 {% if messages%}
-   {% for messages in messages %}
-   <div class="alert alert-{{ message.tags }}" role="alert">
-    {{ message }}
-   </div>
-   {% endfor %}
+{% for messages in messages %}
+<div class="alert alert-{{ message.tags }}" role="alert">
+  {{ message }}
+</div>
+{% endfor %}
 {% endif %}
