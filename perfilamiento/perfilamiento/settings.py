@@ -82,10 +82,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'perfil',
         'USER': 'root',
-        'PASSWORD': 'Jacm1435.',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': 3306 
+    },
+    'segunda':{
+        'ENGINE':'djongo',
+        'NAME':'alarma_ubicacion'
     }
+   
 }
 
 
