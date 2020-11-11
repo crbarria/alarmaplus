@@ -1,0 +1,25 @@
+{% extends 'base/index.html'%}
+{% block main %}
+
+<section class="d-flex justify-content-center mt-5">
+    <img style="width:110px; " src="https://images.clipartlogo.com/files/images/43/432769/no-hope-wireless-access-point-clip-art_f.jpg" alt="">
+</section>
+<div class="checkbox d-flex justify-content-center">
+    <label class="mt-5">
+        <input type="checkbox" id="toggle-two" data-width="110">
+    </label>
+</div>
+
+{% endblock main %}
+{% block script %}
+<script>
+    $(function () {
+        $('#toggle-two').bootstrapToggle({
+            off: 'OFF',
+            on: 'ON',         
+            onstyle: 'info',
+            offstyle: 'danger',
+        });
+    })
+</script>
+{% endblock script %}
