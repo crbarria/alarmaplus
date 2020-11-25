@@ -76,31 +76,25 @@ WSGI_APPLICATION = 'perfilamiento.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-'''
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'perfil',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': 3306 
-    },
-    'segunda':{
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'perfil',
+    #     'USER': 'root',
+    #     'PASSWORD': '1234',
+    #     'HOST': 'localhost',
+    #     'PORT': 3306 
+    # },
+    'default':{
         'ENGINE':'djongo',
         'NAME':'alarma_ubicacion'
     }
    
 }
-'''
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'ubicacion',
 
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

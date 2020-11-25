@@ -10,3 +10,6 @@ class Genero(models.Model):
 class PerfilUser(models.Model):
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     usuario = models.OneToOneField(User,on_delete=models.CASCADE, blank=True)
+
+class Listado(models.Model):
+    personas = models.ForeignKey(PerfilUser, on_delete = models.CASCADE)

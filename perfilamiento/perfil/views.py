@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import Genero, PerfilUser
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 
 def registro(request):
@@ -75,6 +76,39 @@ def verperfil(request):
         request,
         'usuario/perfil.html'
     )
+
+def modificar(request, id):
+    usuarioEncontrado = User.objects.get(pk = id)
+    formulario = FormCreacionPerfil(instance=usuarioEncontrado)
+    if request.method == 'POST':
+        formulario = FormCreacionPerfil(request.POST, isinstance= usuarioEncontrado)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('usuario/menu.html')
+    else:
+        formulario = FormCreacionPerfil(instance=usuarioEncontrado)
+    return render(
+        request,
+        'usuario/modificar.html'
+    )
+    
+def listar(request):
+    usuario = User.objects.all()
+    context = {
+        'titulo': 'Listar usuarios',
+        'usuario': usuario
+    }
+    return render(
+        request,
+        'usuario/listar.html',
+        context
+    )
+
+def eliminar(request, id):
+    usuarioEncontrado = User.objects.get(pk= id)
+    usuarioEncontrado.delete()
+    return redirect('/')
+
 
 
 

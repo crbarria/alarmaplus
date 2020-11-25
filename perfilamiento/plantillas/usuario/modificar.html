@@ -1,0 +1,10 @@
+{% extends 'base/index.html'%}
+{% block main %}
+<div class="container">
+    <form action="" method="POST">
+        {{ formualrio.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-outline-success" value="Actualizar registro">
+    </form>
+</div>
+{% endblock main%}
